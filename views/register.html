@@ -9,74 +9,84 @@
         <link rel="stylesheet" href="css/styles.css">
     </head>
     <body>
+        
         <header>
             <div class="top-header">
-                <div class="logo"> 
-                    <img src="images/logo-mercado-liebre.svg" alt="Logo de MercadoLiebre">
-                </div>
-                <div class="form" action="#" method="GET">
-                    <div class="input">Buscar productos, marcas y más</div>
-                    <div class="submit"><i class="fa fa-search"></i></div>
-                </div>
-                <p><i class="fas fa-hand-holding-usd"></i>Comprá en cuotas y sin tarjeta de crédito</p>
+                <a href="/"><img class="logo" src="images/logo-mercado-liebre.svg" alt="Logo de MercadoLiebre"></a>
+                <form class="form" action="/" method="GET">
+                    <input type="search" id="search" placeholder="Buscar productos y marcas" />
+                    <button type="submit" class="icon"><i class="fa fa-search"></i></button>
+                </form>
+                <p class="texto-compra-cuotas"><i class="fas fa-hand-holding-usd"></i>Comprá en cuotas y sin tarjeta de crédito</p>
             </div>
-            <nav>
-                <ul>
-                    <li><a href="#">Ofertas</a></li>
-                    <li><a href="#">Tiendas Oficiales</a></li>
-                    <li><a href="#">Vender</a></li>
-                    <li><a href="#">Ayuda</a></li>
-                </ul>
-                <ul>
-                    <li><a href="/register">Creá tu cuenta <i class="far fa-id-card"></i></a></li>
-                    <li><a href="/login">Ingresá <i class="fas fa-sign-in-alt"></i></a></li>
-                    <li><a href="#">Mis compras <i class="fas fa-shopping-basket"></i></a></li>
-                </ul>
-            </nav>
+            <div class="links">
+                <nav class="oculto">
+                    <ul class="flex-start">
+                        <li><a href="#">Ofertas</a></li>
+                        <li><a href="#">Tiendas Oficiales</a></li>
+                        <li><a href="#">Vender</a></li>
+                        <li><a href="#">Ayuda</a></li>
+                    </ul>
+                    <ul class="flex-end">
+                        <li><a href="/register">Creá tu cuenta <i class="far fa-id-card"></i></a></li>
+                        <li><a href="/login">Ingresá <i class="fas fa-sign-in-alt"></i></a></li>
+                        <li><a href="#">Mis compras <i class="fas fa-shopping-basket"></i></a></li>
+                    </ul>
+                </nav>
+            </div>
             <div class="burger-menu">
                 <i class="fa fa-bars burger"></i>
             </div>
         </header>
+
         <main class="register">
             <form action="/" method="POST">
-                <input type="text" name="name" placeholder="Nombre y apellido">
-                <input type="text" name="user" placeholder="Nombre de usuario">
-                <input type="email" name="email" placeholder="E-mail">
-                <br>
+                <input type="text" name="name" placeholder="Nombre" required>
+                <span class="mensaje-error">Ingrese un nombre</span>
+                <input type="text" name="user" placeholder="Nombre de usuario" required>
+                <span class="mensaje-error">Ingrese un nombre de usuario</span>
+                <input type="email" name="email" placeholder="E-mail" required>
+                <span class="mensaje-error">Ingrese un email</span>
                 <label for="birth_date"><b>Fecha de nacimiento</b></label>
-                <br>
                 <input type="date" name="birth_date" id="birth_date">
-                <br>
                 <input type="text" name="addres" placeholder="Domicilio">
+                <br>
                 <h4>Perfil del usuario</h4>
                 <div class="profile">
-                    <input type="radio" name="profile" value="buy" id="buy">
-                    <label for="buy">Comprador</label>
-                    <input type="radio" name="profile" value="sell" id="sell">
-                    <label for="sell">Vendedor</label>
+                    <label for="buy">
+                        <input type="radio" name="profile" value="buy" id="buy">Comprador
+                    </label>
+                    <label for="sell">
+                        <input type="radio" name="profile" value="sell" id="sell">Vendedor
+                    </label>
                 </div>
-
+                <br>
                 <h4>Intereses</h4>
-                <div class="interests">
+                <div class="intereses">
                     <div>
-                        <input type="checkbox" name="interests" value="a" id="a">
-                        <label for="a">Electro</label>
+                        <label>
+                            <input type="checkbox" name="interests" value="a" id="a">Electro
+                        </label>
                     </div>
                     <div>
-                        <input type="checkbox" name="interests" value="b" id="b">
-                        <label for="b">Moda</label>
+                        <label>
+                            <input type="checkbox" name="interests" value="b" id="b">Moda
+                        </label>
                     </div>
                     <div>
-                        <input type="checkbox" name="interests" value="c" id="c">
-                        <label for="c">Hogar</label>
+                        <label> 
+                            <input type="checkbox" name="interests" value="c" id="c">Hogar
+                        </label>
                     </div>
                     <div>
-                        <input type="checkbox" name="interests" value="d" id="d">
-                        <label for="d">Juguetería</label>
+                        <label>
+                            <input type="checkbox" name="interests" value="d" id="d">Juguetería
+                        </label>
                     </div>
                     <div>
-                        <input type="checkbox" name="interests" value="e" id="e">
-                        <label for="e">Vida sana</label>
+                        <label>
+                            <input type="checkbox" name="interests" value="e" id="e">Vida sana
+                        </label>
                     </div>
                 </div>
                 
@@ -84,8 +94,10 @@
                 <input type="file" name="avatar">
                 <br>
                 <br>
-                <input type="password" name="pass" placeholder="Elegí tu contraseña">
-                <input type="password" name="pass_confirm" placeholder="Confirmá tu contraseña">
+                <input type="password" name="pass" placeholder="Elegí tu contraseña" required>
+                <span class="mensaje-error">Ingrese una contraseña</span>
+                <input type="password" name="pass_confirm" placeholder="Confirmá tu contraseña" required>
+                <span class="mensaje-error">Confirme la contraseña</span>
                 <br>
                 <br>
                 <input type="submit" value="Enviar">
@@ -94,7 +106,29 @@
                 <br>
             </form>
         </main>
-        <footer>
+
+        <footer class="footer">
+            <div id="div1">
+                <p class="icon-footer"><i class="fas fa-credit-card"></i>
+                <h3 class="titulares">Pagá con tarjeta o en efectivo</h3>
+                <p class="texto">Con Mercado Liebre Cash, tenés cuotas sin interés con tarjeta o efectivo en
+    puntos de pago. ¡Y siempre es seguro!</p>
+            </div>
+            <div id="div2">
+                <p class="icon-footer"><i class="fas fa-gift"></i>
+                <h3 class="titulares">Envío gratis desde $ 2.500</h3>
+                <p class="texto">Solo por estar registrad@ en Mercado Liebre tenés envíos gratis en miles de
+    productos. Es un beneficio de Mercado Puntos.</p>
+            </div>
+            <div id="div3">
+                <p class="icon-footer"><i class="fas fa-user-shield"></i></p>
+                <h3 class="titulares">Seguridad, de principio a fin</h3>
+                <p class="texto">¿No te gusta? ¡Devolvelo! En Mercado Liebre, no hay nada que no puedas hacer,
+    porque estás siempre protegid@.</p>
+            </div>
+            <div id="div4">
+                <p class="Copyright">Copyright © 1999-2020 MercadoLiebre S.R.L.</p>
+            </div>
         </footer>
     </body>
 </html>
