@@ -655,7 +655,7 @@ input:invalid + .mensaje-error{
     }
 
 
-    /*FOOTER STYLE*/
+    /*FOOTER STYLEs*/
     .footer{
         display: flex;
         flex-wrap: wrap;
